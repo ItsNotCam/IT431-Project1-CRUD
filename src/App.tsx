@@ -3,7 +3,7 @@
 import React from "react"
 import Nav from "./components/Nav"
 import CarDisplay from "./components/CarDisplay";
-import { loadCars } from "./lib/db";
+import { addCarToDB, loadCars } from "./lib/db";
 
 export interface CarActionProps {
 	cars: Car[];
@@ -24,7 +24,7 @@ const App: React.FC = () => {
 	}
 
 	const addCar = (car: Car): CarActionProps => {
-		cars.push(car);
+		cars = addCarToDB(car);
 		return { cars, success: true };
 	}
 
