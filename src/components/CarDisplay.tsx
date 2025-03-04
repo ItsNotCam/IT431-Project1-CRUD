@@ -2,7 +2,7 @@
 
 import React from 'react';
 import SearchIcon from "../assets/SearchIcon.svg"
-import { CarActionProps } from '../App';
+import { CarActionProps } from "../global-types";
 import { CarCard } from './CarCard';
 
 interface CarDisplayProps {

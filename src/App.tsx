@@ -4,11 +4,8 @@ import React from "react"
 import Nav from "./components/Nav"
 import CarDisplay from "./components/CarDisplay";
 import { addCarToDB, loadCars } from "./lib/db";
-
-export interface CarActionProps {
-	cars: Car[];
-	success: boolean;
-}
+import AddCar from "./ui/AddCar";
+import { CarActionProps } from "./global-types";
 
 const App: React.FC = () => {
 	var cars: Car[] = loadCars();
@@ -33,6 +30,7 @@ const App: React.FC = () => {
 		<Nav />
 		<main>
 			<CarDisplay cars={cars} removeCar={removeCar} getCars={loadCars} addCar={addCar}/>
+			<AddCar addCar={addCar} />
 		</main>
     </>
   )
